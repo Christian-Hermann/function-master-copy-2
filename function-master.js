@@ -42,13 +42,27 @@ return Object.keys(object).join(' ')
 I: Takes in an Object
 O: Returns all of the values in a string into one string
    Each separated by a space
-C: 
+C: No Booleans
 E:
 */
 
 function valuesToString(object) {
+ // use an empty string the hold new string
+   let result = "";
+ // iterate though each key in the object
+   for(let key in object){
+  // check to see if the value is a string
+      if(typeof object[key] === 'string'){
+     // if result is not the first value ad a space    
+         if (result) result += " "
+      // adding each value to the string   
+         result += object[key]
+      }
+   }
 
-
+ // returnt the final concatenated string
+return result;
+  
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -148,14 +162,17 @@ return "Welcome " + object.name.charAt(0).toUpperCase() + object.name.slice(1).t
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: Takes in an Object with a name and a species
+O: Return "<name is a <species>"
 C:
 E:
 */
 
 function profileInfo(object) {
-
+   // use concatenation to add " is a " in middle leaving a space on each side
+   // to get property name and species use dot notation
+   // use charAt to make first lett capitalized and use slice to keep the rest lowercase
+   return object.name.charAt(0).toUpperCase() + object.name.slice(1).toLowerCase() + " is a " + object.species.charAt(0).toUpperCase() + object.species.slice(1).toLowerCase()
 }
 
 //////////////////////////////////////////////////////////////////////
