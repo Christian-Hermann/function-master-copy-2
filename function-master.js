@@ -37,14 +37,16 @@ return Object.keys(object).join(' ')
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
-C:
+I: Takes in an Object
+O: Returns all of the values in a string into one string
+   Each separated by a space
+C: 
 E:
 */
 
 function valuesToString(object) {
-    
+
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -52,13 +54,25 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: Takes in one argument
+O: Return 'array' if argument is an array
+   Return 'object' if argument is an object
 C:
 E:
 */
 
 function arrayOrObject(collection) {
+   // check to see if argument is an array
+   if(Array.isArray(collection)){
+   // if argument is an array return 'array'
+      return 'array' 
+   }
+   // check to ss if argument is an object
+   // null will also return 'object' so make sure it is not equal to null
+   else if (typeof collection === 'object' && collection !== null){
+      // if argument is a collection return 'object'
+      return 'object'
+   }
     
 }
 
