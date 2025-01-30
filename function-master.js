@@ -2,6 +2,8 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// const { words } = require("lodash")
+
 
 /*
 I: Takes in an object
@@ -81,14 +83,17 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: Takes in a string of one word
+O: Return the string with the first letter capitalized
 C:
 E:
 */
 
 function capitalizeWord(string) {
-    
+    // use charAt at the first position to make the first letter uppercase
+   // concatenate to bring the string together
+    // use slice at the second position to keep the rest of the string lowercase
+   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -96,29 +101,46 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: Takes in a string of words
+O: Returns a string with the first letter of all the words capitalized
 C:
 E:
 */
 
-function capitalizeAllWords(string) {
-    
-}
 
+// split splits string into individual strings in an array including empty space
+// join brings the strings in the array back to a string
+
+function capitalizeAllWords(string) {
+  // slit the strings into words in an array
+  words = string.split(' ')
+   // iterate through the array
+  for(let i = 0; i < words.length; i++){
+   // if element is greater than 0 - forgets about the empty spaces
+   if(words[i].length > 0){
+      // make first letter of each iteration uppercase and the rest of the word lowercase
+      words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase()
+   }
+  }
+   // join the words in the array back to a string
+   return words.join(' ')
+}
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: takes in Object with name property
+O: returns string "Welcome <name>!"
 C:
 E:
 */
 
 function welcomeMessage(object) {
-
+// use concatenation to add "welcome" and "!"
+// to get property name use dot notation 
+// use charAt to make first lett capitalized and use slice to keep the rest lowercase
+return "Welcome " + object.name.charAt(0).toUpperCase() + object.name.slice(1).toLowerCase() + "!"
 }
 
 //////////////////////////////////////////////////////////////////////
