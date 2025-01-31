@@ -180,15 +180,25 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
-C:
-E:
+I: Takes in an Object
+O: If Oject has a noises array - return them as a string separated by a space
+   If Object does not have noises array - return 'there are no noises'
+C: NA 
+E: NA
 */
 
 function maybeNoises(object) {
-
+   // check if noises exists on the object and is an array and is not an empty array
+ if(object.noises && Array.isArray(object.noises) && object.noise.length < 0){
+   // join the strings together and put back into a string
+   return object.noises.join(' ')
+   // if not an array retrun 'there are no noises'
+ } else {
+   return 'there are no noises'
+ }
+ 
 }
+ 
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
