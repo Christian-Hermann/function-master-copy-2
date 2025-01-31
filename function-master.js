@@ -189,7 +189,7 @@ E: NA
 
 function maybeNoises(object) {
    // check if noises exists on the object and is an array and is not an empty array
- if(object.noises && Array.isArray(object.noises) && object.noise.length < 0){
+ if(Array.isArray(object.noises) && object.noises.length > 0){
    // join the strings together and put back into a string
    return object.noises.join(' ')
    // if not an array retrun 'there are no noises'
@@ -205,14 +205,27 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: a string of words and a word
+O: return true if word string is in string of words
+   if not return false
 C:
 E:
 */
 
 function hasWord(string, word) {
+  // use split to to change string into an array of strings
+   var str = string.split(' ')
+    // iterate thought the strings array 
+   for(var i = 0; i < str.length; i++){
+      // if string element is equal to word string return true
+      if(str[i] === word){
+         return true
 
+      }
+      
+   }
+   // else return false
+   return false
 }
 
 //////////////////////////////////////////////////////////////////////
