@@ -213,19 +213,10 @@ E:
 */
 
 function hasWord(string, word) {
-  // use split to to change string into an array of strings
-   var str = string.split(' ')
-    // iterate thought the strings array 
-   for(var i = 0; i < str.length; i++){
-      // if string element is equal to word string return true
-      if(str[i] === word){
-         return true
 
-      }
-      
-   }
-   // else return false
-   return false
+   // split the string into an array separated by spaces
+   // use includes method to check if word string is in the array
+   return string.split(' ').includes(word)
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -233,14 +224,17 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: Takes in a Name and an Object
+O: Add the name to the Object's friends array then return the object
 C:
 E:
 */
 
 function addFriend (name, object) {
-
+    // push name onto the friends array in the object
+   object.friends.push(name)
+   // return object
+   return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -248,8 +242,8 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: Takes a name and an Object
+O: Return true if name is a friend of object and false otherwise
 C:
 E:
 */
