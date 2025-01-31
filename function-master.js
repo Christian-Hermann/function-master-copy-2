@@ -2,6 +2,8 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// const { keys } = require("lodash");
+
 // const { words } = require("lodash")
 
 
@@ -262,8 +264,8 @@ return object.friends.includes(name)
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: Takes in a name and a list of people 
+O: Returns a list of all the names name is not friends with
 C:
 E:
 */
@@ -277,7 +279,7 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
+I: takes in an Object a key and a value
 O:
 C:
 E:
@@ -285,6 +287,11 @@ E:
 
 function updateObject(object, key, value) {
 
+
+   // updates the existin key or adds a new one
+   object[key]= value
+   // return object
+   return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -292,14 +299,20 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 /*
-I:
-O:
+I: Should take an object and an array of strings
+O: remove any properties on object that are not on array
 C:
 E:
 */
 
 function removeProperties(object, array) {
-
+// use a for loop to iterate through the array of keys 
+for (var i = 0; i < array.length; i++){
+   // access each key in array element
+   let key = array[i];
+   // removes the property from the object
+   delete object[key]
+}
 }
 
 //////////////////////////////////////////////////////////////////////
