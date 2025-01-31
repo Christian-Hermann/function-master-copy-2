@@ -249,9 +249,14 @@ E:
 */
 
 function isFriend(name, object) {
-
+   // check to see if friend is an array on object or is empty if so return false
+if (!Array.isArray(object.friends)){
+   return false
 }
 
+// check to see if the name is in the friends array
+return object.friends.includes(name)
+}
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
